@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>环迅支付事业合伙人招募计划</title>
+    <style>
+        :root {
+            --primary-color: #0d253f; /* 深邃蓝 */
+            --secondary-color: #d4af37; /* 金色 */
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white-color: #ffffff;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white-color);
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .section-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(13, 37, 63, 0.7), rgba(13, 37, 63, 0.7)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white-color);
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero h2 {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        .cta-button {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 15px 35px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            border: 2px solid var(--secondary-color);
+        }
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--secondary-color);
+        }
+
+        /* Pain Points Section */
+        .pain-points {
+            background-color: var(--light-bg);
+        }
+        .pain-points-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .pain-point-item {
+            background-color: var(--white-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            width: calc(50% - 40px);
+            min-width: 280px;
+        }
+        .pain-point-item h3 {
+            color: var(--primary-color);
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        /* Policy Section */
+        .policy {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            position: relative;
+            overflow: hidden;
+        }
+        .policy .section-title {
+            color: var(--white-color);
+        }
+        .policy .section-subtitle {
+            color: #ccc;
+        }
+        .policy-table {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: left;
+            border: 1px solid var(--secondary-color);
+        }
+        .policy-row {
+            display: flex;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px 0;
+        }
+        .policy-row:last-child {
+            border-bottom: none;
+        }
+        .policy-highlight {
+            flex: 1;
+            padding-right: 20px;
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        .policy-description {
+            flex: 3;
+        }
+        .policy-description h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.1em;
+            color: var(--white-color);
+        }
+        .policy-description p {
+            margin: 0;
+            color: #ddd;
+        }
+
+        /* Support Section */
+        .support-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        .support-item {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            width: calc(50% - 30px);
+            display: flex;
+            align-items: center;
+        }
+        .support-item span {
+            font-size: 2em;
+            color: var(--secondary-color);
+            margin-right: 15px;
+        }
+
+        /* Process Section */
+        .process {
+             background-color: var(--light-bg);
+        }
+        .process-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            position: relative;
+        }
+        .process-step {
+            width: 30%;
+            z-index: 1;
+        }
+        .process-step h3 {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            margin: 0 auto 15px auto;
+            font-size: 1.5em;
+        }
+        .process-flow::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background-color: #ddd;
+            z-index: 0;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        .contact .section-title, .contact .section-subtitle {
+            color: var(--white-color);
+        }
+        .contact-info {
+            font-size: 1.3em;
+            margin: 30px 0;
+        }
+        .qr-code {
+            margin: 20px auto;
+            max-width: 200px; /* 控制二维码图片最大宽度 */
+        }
+        .qr-code img {
+            width: 100%;
+            height: auto;
+            border: 5px solid var(--white-color);
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            .hero h2 { font-size: 1.2em; }
+            .section-title { font-size: 2em; }
+            .pain-point-item, .support-item { width: 100%; }
+            .policy-row { flex-direction: column; text-align: center; }
+            .policy-highlight { padding-bottom: 10px; }
+            .process-flow { flex-direction: column; }
+            .process-step { width: 100%; margin-bottom: 30px; }
+            .process-flow::before { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 第一屏：英雄标题与行动号召 -->
+    <header class="hero">
+        <h1>把握支付新机遇，共创财富新未来</h1>
+        <h2>诚邀您加入环迅支付POS机代理商网络 — 开启您的事业新篇章</h2>
+        <a href="#contact" class="cta-button">立即咨询合作</a>
+    </header>
+
+    <main>
+        <!-- 第二屏：我们懂你，更懂市场 -->
+        <section class="section pain-points">
+            <div class="container">
+                <h2 class="section-title">我们懂你，更懂市场</h2>
+                <p class="section-subtitle">无论您是行业老兵还是市场新人，我们都清楚您在寻找一个真正可靠、能持续盈利的合作平台。</p>
+                <div class="pain-points-grid">
+                    <div class="pain-point-item">
+                        <h3>渴望一份稳定管道收入？</h3>
+                        <p>厌倦了朝九晚五的固定薪水？渴望建立一个只要有交易就在持续为你创造收益的个人事业？</p>
+                    </div>
+                    <div class="pain-point-item">
+                        <h3>担心上级代理政策不稳？</h3>
+                        <p>害怕分润被克扣、政策朝令夕改？你需要一个稳定可靠、政策透明的合作伙伴。</p>
+                    </div>
+                    <div class="pain-point-item">
+                        <h3>愁于推广产品没有亮点？</h3>
+                        <p>市场产品同质化严重？你需要一款功能强大、安全稳定、深受商户欢迎的王牌产品。</p>
+                    </div>
+                    <div class="pain-point-item">
+                        <h3>缺少有效的市场推广方法？</h3>
+                        <p>不知道如何开口、去哪里找客户？你需要系统性的培训和市场物料支持，让你轻松起步。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 第四屏：【重磅】龙舟版特别活动政策 -->
+        <section id="policy" class="section policy">
+            <div class="container">
+                <h2 class="section-title">【重磅】龙舟版特别活动政策</h2>
+                <p class="section-subtitle">端午乘风，收益破浪！限时机遇，不容错过！</p>
+                
+                <!-- 【请在这里修改】请根据您的真实政策修改下面的内容 -->
+                <div class="policy-table">
+                    <div class="policy-row">
+                        <div class="policy-highlight">超低门槛，轻松加盟</div>
+                        <div class="policy-description">
+                            <h4>活动期间，首次提货仅需 <strong style="font-size: 1.2em; color: #ffeb3b;">XX</strong> 台，即可享受一级代理政策！</h4>
+                            <p>小投入，大回报，轻松开启您的支付事业。</p>
+                        </div>
+                    </div>
+                    <div class="policy-row">
+                        <div class="policy-highlight">高额激活返现</div>
+                        <div class="policy-description">
+                            <h4>每成功激活一台机器，即可获得高达 <strong style="font-size: 1.2em; color: #ffeb3b;">XXX</strong> 元的现金奖励，上不封顶！</h4>
+                            <p>快速回本，前期推广动力十足，迅速积累第一桶金。</p>
+                        </div>
+                    </div>
+                    <div class="policy-row">
+                        <div class="policy-highlight">顶级分润，躺着赚钱</div>
+                        <div class="policy-description">
+                            <h4>尊享万分之 <strong style="font-size: 1.2em; color: #ffeb3b;">XX</strong> 的顶级交易分润，客户不停刷，您就持续赚！</h4>
+                            <p>建立真正的管道收益，一次推广，长期回报，实现被动收入增长。</p>
+                        </div>
+                    </div>
+                    <div class="policy-row">
+                        <div class="policy-highlight">达标额外奖励</div>
+                        <div class="policy-description">
+                            <h4>活动期间内，团队交易量达到 <strong style="font-size: 1.2em; color: #ffeb3b;">XX</strong> 万元，额外奖励团队现金 <strong style="font-size: 1.2em; color: #ffeb3b;">XXXX</strong> 元！</h4>
+                            <p>激励您和您的下级代理，团队作战，收益倍增。</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 修改区域结束 -->
+
+            </div>
+        </section>
+        
+        <!-- 第五屏：我们的承诺与支持 -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">您只管开拓市场，其他的交给我们</h2>
+                <p class="section-subtitle">我们提供全方位的支持，确保您在开拓市场的道路上毫无后顾之忧。</p>
+                <div class="support-grid">
+                    <div class="support-item"><span>✔</span><p><strong>政策透明，分润直发：</strong>独立的代理商后台，分润总部直发，每一笔收益都清晰可见，绝不克扣。</p></div>
+                    <div class="support-item"><span>✔</span><p><strong>专业培训，轻松上手：</strong>我们提供从产品知识到销售技巧的全方位线上线下培训，小白也能快速成为专家。</p></div>
+                    <div class="support-item"><span>✔</span><p><strong>物料支持，助力营销：</strong>提供统一设计的宣传单、海报、展架等市场物料，让您的推广更专业、更高效。</p></div>
+                    <div class="support-item"><span>✔</span><p><strong>7x24小时客服：</strong>专属客服团队，随时解答您和您商户遇到的任何问题，售后无忧。</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第六屏：合作流程 -->
+        <section class="section process">
+            <div class="container">
+                <h2 class="section-title">三步开启您的事业</h2>
+                <div class="process-flow">
+                    <div class="process-step">
+                        <h3>1</h3>
+                        <h4>提交申请</h4>
+                        <p>与我取得联系，提交您的合作意向。</p>
+                    </div>
+                    <div class="process-step">
+                        <h3>2</h3>
+                        <h4>审核签约</h4>
+                        <p>沟通合作细节，完成签约，开通您的专属代理后台。</p>
+                    </div>
+                    <div class="process-step">
+                        <h3>3</h3>
+                        <h4>开启事业</h4>
+                        <p>领取POS机和物料，开始推广，获取您的第一笔收益！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第七屏：立即行动 -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title">立即行动，成为我们的事业合伙人！</h2>
+                <p class="section-subtitle">下一个支付行业的风口，我们等您一起来！</p>
+                
+                <!-- 【请在这里修改】请修改您的联系信息和二维码 -->
+                <div class="contact-info">
+                    <p><strong>联系人：</strong>杨先生</p>
+                    <p><strong>联系电话：</strong>18187756672</p>
+                    <p><strong>微信咨询，请扫描下方二维码</strong></p>
+                </div>
+                <div class="qr-code">
+                    <!-- 请将 src 中的链接替换成您的微信二维码图片链接 -->
+                    <img src="https://via.placeholder.com/200" alt="微信二维码">
+                    <p>（请替换成您的微信二维码图片）</p>
+                </div>
+                <!-- 修改区域结束 -->
+
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2025 环迅支付事业合伙人招募. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
